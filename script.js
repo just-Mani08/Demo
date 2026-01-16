@@ -1,19 +1,14 @@
-// Select elements
-var istatus = document.querySelector("#card h5");
-var addBtn = document.querySelector("#add");
+var main = document.querySelector("#main")
+var cursor = document.querySelector(".cursor")
 
-let check = 0;
-
-addBtn.addEventListener("click", function () {
-  if (check === 0) {
-    istatus.innerHTML = "Friends";
-    istatus.style.color = "green";
-    addBtn.innerHTML = "Remove Friend";
-    check = 1;
-  } else {
-    istatus.innerHTML = "Stranger";
-    istatus.style.color = "red";
-    addBtn.innerHTML = "Add Friend";
-    check = 0;
-  }
-});
+main.addEventListener("mousemove", function(dets){
+  //These left and will only work when you give the positon: absolute; to the cursor in css
+  cursor.style.left = dets.x+"px"; 
+  cursor.style.top = dets.y+"px";
+})
+h1.addEventListener("mouseenter",function(){
+  cursor.style.transform += "scale(2)";
+})
+h1.addEventListener("mouseleave",function(){
+  cursor.style.transform = "translate(-50%,-50%)";
+})
